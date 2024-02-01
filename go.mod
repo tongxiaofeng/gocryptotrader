@@ -24,7 +24,7 @@ require (
 	github.com/urfave/cli/v2 v2.27.1
 	github.com/volatiletech/null v8.0.0+incompatible
 	golang.org/x/crypto v0.18.0
-	golang.org/x/net v0.20.0
+	golang.org/x/net v0.20.0 // indirect
 	golang.org/x/text v0.14.0
 	golang.org/x/time v0.5.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240125205218-1f4bbc51befe
