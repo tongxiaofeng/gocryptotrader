@@ -28,34 +28,12 @@ import (
 	"github.com/thrasher-corp/gocryptotrader/exchanges/account"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/asset"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/binance"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/binanceus"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/bitfinex"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/bitflyer"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/bithumb"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/bitmex"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/bitstamp"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/btcmarkets"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/btse"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/bybit"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/coinbasepro"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/coinut"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/deposit"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/exmo"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/gateio"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/gemini"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/hitbtc"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/huobi"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/itbit"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/kraken"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/kucoin"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/lbank"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/okcoin"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/okx"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/orderbook"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/poloniex"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/stats"
 	"github.com/thrasher-corp/gocryptotrader/exchanges/ticker"
-	"github.com/thrasher-corp/gocryptotrader/exchanges/yobit"
 	"github.com/thrasher-corp/gocryptotrader/gctscript/vm"
 	"github.com/thrasher-corp/gocryptotrader/log"
 )
@@ -994,56 +972,12 @@ func genCert(targetDir string) error {
 // supported.
 func NewSupportedExchangeByName(name string) (exchange.IBotExchange, error) {
 	switch strings.ToLower(name) {
-	case "binanceus":
-		return new(binanceus.Binanceus), nil
 	case "binance":
 		return new(binance.Binance), nil
 	case "bitfinex":
 		return new(bitfinex.Bitfinex), nil
-	case "bitflyer":
-		return new(bitflyer.Bitflyer), nil
-	case "bithumb":
-		return new(bithumb.Bithumb), nil
-	case "bitmex":
-		return new(bitmex.Bitmex), nil
-	case "bitstamp":
-		return new(bitstamp.Bitstamp), nil
-	case "btc markets":
-		return new(btcmarkets.BTCMarkets), nil
-	case "btse":
-		return new(btse.BTSE), nil
-	case "bybit":
-		return new(bybit.Bybit), nil
-	case "coinut":
-		return new(coinut.COINUT), nil
-	case "exmo":
-		return new(exmo.EXMO), nil
-	case "coinbasepro":
-		return new(coinbasepro.CoinbasePro), nil
-	case "gateio":
-		return new(gateio.Gateio), nil
-	case "gemini":
-		return new(gemini.Gemini), nil
-	case "hitbtc":
-		return new(hitbtc.HitBTC), nil
-	case "huobi":
-		return new(huobi.HUOBI), nil
-	case "itbit":
-		return new(itbit.ItBit), nil
-	case "kraken":
-		return new(kraken.Kraken), nil
-	case "kucoin":
-		return new(kucoin.Kucoin), nil
-	case "lbank":
-		return new(lbank.Lbank), nil
-	case "okcoin":
-		return new(okcoin.Okcoin), nil
 	case "okx":
 		return new(okx.Okx), nil
-	case "poloniex":
-		return new(poloniex.Poloniex), nil
-	case "yobit":
-		return new(yobit.Yobit), nil
 	default:
 		return nil, fmt.Errorf("'%s', %w", name, ErrExchangeNotFound)
 	}
