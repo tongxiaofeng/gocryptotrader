@@ -1101,7 +1101,7 @@ func TestWithdraw(t *testing.T) {
 	withdrawCryptoRequest := withdraw.Request{
 		Exchange: k.Name,
 		Crypto: withdraw.CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 		Amount:        -1,
 		Currency:      currency.XXBT,

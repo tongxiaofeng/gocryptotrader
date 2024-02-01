@@ -45,7 +45,7 @@ var (
 	validCryptoRequest = &Request{
 		Exchange: "Binance",
 		Crypto: CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 		Currency:    currency.BTC,
 		Description: "Test Withdrawal",
@@ -64,7 +64,7 @@ var (
 	invalidCryptoNegativeFeeRequest = &Request{
 		Exchange: "Binance",
 		Crypto: CryptoRequest{
-			Address:   core.BitcoinDonationAddress,
+			Address:   core.TestBitcoinAddress,
 			FeeAmount: -0.1,
 		},
 		Currency:    currency.BTC,
@@ -76,7 +76,7 @@ var (
 	invalidCurrencyCryptoRequest = &Request{
 		Exchange: "Binance",
 		Crypto: CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 		Currency: currency.AUD,
 		Amount:   0,
@@ -102,7 +102,7 @@ var (
 
 func TestMain(m *testing.M) {
 	var p portfolio.Base
-	err := p.AddAddress(core.BitcoinDonationAddress, "test", currency.BTC, 1500)
+	err := p.AddAddress(core.TestBitcoinAddress, "test", currency.BTC, 1500)
 	if err != nil {
 		fmt.Printf("failed to add portfolio address with reason: %v, unable to continue tests", err)
 		os.Exit(0)

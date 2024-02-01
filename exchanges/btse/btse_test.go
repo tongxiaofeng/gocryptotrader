@@ -443,7 +443,7 @@ func TestCancelExchangeOrder(t *testing.T) {
 	// TODO: Place an order to make sure we can cancel it
 	var orderCancellation = &order.Cancel{
 		OrderID:       "b334ecef-2b42-4998-b8a4-b6b14f6d2671",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          spotPair,
 		AssetType:     asset.Spot,
@@ -467,7 +467,7 @@ func TestCancelAllExchangeOrders(t *testing.T) {
 
 	var orderCancellation = &order.Cancel{
 		OrderID:       "1",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          spotPair,
 		AssetType:     asset.Spot,

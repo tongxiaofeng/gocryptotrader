@@ -660,7 +660,7 @@ func TestCancelExchangeOrder(t *testing.T) {
 	currencyPair := currency.NewPair(currency.LTC, currency.BTC)
 	var orderCancellation = &order.Cancel{
 		OrderID:       "123456789012345678901234567890123456",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          currencyPair,
 		AssetType:     asset.Futures,
@@ -682,7 +682,7 @@ func TestCancelAllExchangeOrders(t *testing.T) {
 	currencyPair := currency.NewPair(currency.LTC, currency.BTC)
 	var orderCancellation = &order.Cancel{
 		OrderID:       "123456789012345678901234567890123456",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          currencyPair,
 		AssetType:     asset.Futures,
@@ -744,7 +744,7 @@ func TestWithdraw(t *testing.T) {
 	withdrawCryptoRequest := withdraw.Request{
 		Exchange: b.Name,
 		Crypto: withdraw.CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 		Amount:          -1,
 		Currency:        currency.BTC,

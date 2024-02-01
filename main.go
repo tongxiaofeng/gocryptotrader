@@ -115,7 +115,6 @@ func main() {
 		os.Exit(0)
 	}
 
-	fmt.Print(core.Banner)
 	fmt.Println(core.Version(false))
 
 	var err error

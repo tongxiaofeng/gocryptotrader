@@ -1450,7 +1450,7 @@ func TestCancelOrder(t *testing.T) {
 	sharedtestvalues.SkipTestIfCredentialsUnset(t, o, canManipulateRealOrders)
 	var orderCancellation = &order.Cancel{
 		OrderID:       "1",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          spotTradablePair,
 		AssetType:     asset.Spot,
@@ -1507,7 +1507,7 @@ func TestWithdraw(t *testing.T) {
 		Description: "WITHDRAW IT ALL",
 		Crypto: withdraw.CryptoRequest{
 			Chain:     currencyInfo[0].Chain,
-			Address:   core.BitcoinDonationAddress,
+			Address:   core.TestBitcoinAddress,
 			FeeAmount: 0.01,
 		},
 		ClientOrderID: "1234",

@@ -225,7 +225,7 @@ func (w Wrapper) DepositAddress(exch, _ string, _ currency.Code) (*deposit.Addre
 		return nil, errTestFailed
 	}
 
-	return &deposit.Address{Address: core.BitcoinDonationAddress}, nil
+	return &deposit.Address{Address: core.TestBitcoinAddress}, nil
 }
 
 // WithdrawalCryptoFunds validator for test execution/scripts

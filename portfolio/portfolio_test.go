@@ -544,11 +544,11 @@ func TestSeed(t *testing.T) {
 func TestIsExchangeSupported(t *testing.T) {
 	t.Parallel()
 	newBase := seedPortFolioForTest(t)
-	ret := newBase.IsExchangeSupported("BTC Markets", core.BitcoinDonationAddress)
+	ret := newBase.IsExchangeSupported("BTC Markets", core.TestBitcoinAddress)
 	if !ret {
 		t.Fatal("expected IsExchangeSupported() to return true")
 	}
-	ret = newBase.IsExchangeSupported("Kraken", core.BitcoinDonationAddress)
+	ret = newBase.IsExchangeSupported("Kraken", core.TestBitcoinAddress)
 	if ret {
 		t.Fatal("expected IsExchangeSupported() to return false")
 	}
@@ -557,7 +557,7 @@ func TestIsExchangeSupported(t *testing.T) {
 func TestIsColdStorage(t *testing.T) {
 	t.Parallel()
 	newBase := seedPortFolioForTest(t)
-	ret := newBase.IsColdStorage(core.BitcoinDonationAddress)
+	ret := newBase.IsColdStorage(core.TestBitcoinAddress)
 	if !ret {
 		t.Fatal("expected IsColdStorage() to return true")
 	}
@@ -574,7 +574,7 @@ func TestIsColdStorage(t *testing.T) {
 func TestIsWhiteListed(t *testing.T) {
 	t.Parallel()
 	b := seedPortFolioForTest(t)
-	ret := b.IsWhiteListed(core.BitcoinDonationAddress)
+	ret := b.IsWhiteListed(core.TestBitcoinAddress)
 	if !ret {
 		t.Fatal("expected IsWhiteListed() to return true")
 	}
@@ -618,7 +618,7 @@ func seedPortFolioForTest(t *testing.T) *Base {
 	t.Helper()
 	newBase := Base{}
 
-	err := newBase.AddAddress(core.BitcoinDonationAddress, "test", currency.BTC, 1500)
+	err := newBase.AddAddress(core.TestBitcoinAddress, "test", currency.BTC, 1500)
 	if err != nil {
 		t.Fatalf("failed to add portfolio address with reason: %v, unable to continue tests", err)
 	}

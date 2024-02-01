@@ -2163,7 +2163,7 @@ func TestWithdrawCryptocurrencyFunds(t *testing.T) {
 		Amount:   0.00000000001,
 		Currency: currency.BTC,
 		Crypto: withdraw.CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 	}
 	if _, err := ku.WithdrawCryptocurrencyFunds(context.Background(), &withdrawCryptoRequest); err != nil {
@@ -2238,7 +2238,7 @@ func TestCancelOrder(t *testing.T) {
 	sharedtestvalues.SkipTestIfCredentialsUnset(t, ku, canManipulateRealOrders)
 	var orderCancellation = &order.Cancel{
 		OrderID:       "1",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          spotTradablePair,
 		AssetType:     asset.Spot,

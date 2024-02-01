@@ -47,3 +47,6 @@ func Version(short bool) string {
 	versionStr += Issues + "\n"
 	return versionStr
 }
+
+// Test BTC Adress
+const TestBitcoinAddress = "1B4ZJFDLxUKbwmDHxyekusWcxM2MMvTzm1"

@@ -1149,7 +1149,7 @@ func TestWithdrawal(t *testing.T) {
 	t.Parallel()
 	sharedtestvalues.SkipTestIfCredentialsUnset(t, ok, canManipulateRealOrders)
 
-	_, err := ok.Withdrawal(contextGenerate(), &WithdrawalInput{Amount: 0.1, TransactionFee: 0.00005, Currency: "BTC", WithdrawalDestination: "4", ToAddress: core.BitcoinDonationAddress})
+	_, err := ok.Withdrawal(contextGenerate(), &WithdrawalInput{Amount: 0.1, TransactionFee: 0.00005, Currency: "BTC", WithdrawalDestination: "4", ToAddress: core.TestBitcoinAddress})
 	if err != nil {
 		t.Error("Okx Withdrawal error", err)
 	}
@@ -2123,7 +2123,7 @@ func TestCancelOrder(t *testing.T) {
 
 	var orderCancellation = &order.Cancel{
 		OrderID:       "1",
-		WalletAddress: core.BitcoinDonationAddress,
+		WalletAddress: core.TestBitcoinAddress,
 		AccountID:     "1",
 		Pair:          currency.NewPair(currency.LTC, currency.BTC),
 		AssetType:     asset.Spot,
@@ -2140,14 +2140,14 @@ func TestCancelBatchOrders(t *testing.T) {
 	var orderCancellationParams = []order.Cancel{
 		{
 			OrderID:       "1",
-			WalletAddress: core.BitcoinDonationAddress,
+			WalletAddress: core.TestBitcoinAddress,
 			AccountID:     "1",
 			Pair:          currency.NewPair(currency.LTC, currency.BTC),
 			AssetType:     asset.Spot,
 		},
 		{
 			OrderID:       "1",
-			WalletAddress: core.BitcoinDonationAddress,
+			WalletAddress: core.TestBitcoinAddress,
 			AccountID:     "1",
 			Pair:          currency.NewPair(currency.LTC, currency.BTC),
 			AssetType:     asset.PerpetualSwap,
@@ -2221,7 +2221,7 @@ func TestWithdraw(t *testing.T) {
 		Amount:   0.00000000001,
 		Currency: currency.BTC,
 		Crypto: withdraw.CryptoRequest{
-			Address: core.BitcoinDonationAddress,
+			Address: core.TestBitcoinAddress,
 		},
 	}
 	if _, err := ok.WithdrawCryptocurrencyFunds(contextGenerate(), &withdrawCryptoRequest); err != nil {
